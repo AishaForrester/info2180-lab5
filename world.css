@@ -44,8 +44,8 @@ body {
 
 #lookup { /*styling our first button*/
     color: azure;
-    width: 80px;
-    height: 30px; 
+    width: 140px;
+    height: 35px; 
     border: none;
     border-radius: 5px;
     background-color: rgb(97, 207, 207);
@@ -53,6 +53,21 @@ body {
 }
 
 #lookup:hover {
+    background-color: rgb(92, 134, 134);
+    cursor: pointer;
+}
+
+#nlookup { /*styling our second button*/
+    color: azure;
+    width: 140px;
+    height: 35px; 
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(37, 155, 84);
+    padding: 5px;
+}
+
+#nlookup:hover {  /*applying hover for our second button*/
     background-color: rgb(92, 134, 134);
     cursor: pointer;
 }
