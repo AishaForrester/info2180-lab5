@@ -26,13 +26,27 @@ try {
 
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    ?>
-    <ul>
-        <?php foreach ($results as $row): ?>
-            <li><?= $row['name'] . ' is ruled by ' . $row['head_of_state']; ?></li>
-        <?php endforeach; ?>
-    </ul>
-    <?php
+    echo '<style>';
+    echo 'table {border-collapse: collapse; width: 100%;}';
+    echo 'th, td {border: 1px solid #dddddd; text-align: left; padding: 8px;}';
+    echo 'th {background-color: #f2f2f2;}';
+    echo '</style>';
+
+    echo '<table>';
+    echo '<thead><tr><th>Country Name</th><th>Continent</th><th>Independence Year</th><th>Head of State</th></tr></thead>';
+    echo '<tbody>';
+
+    foreach ($results as $row) {
+        echo '<tr>';
+        echo '<td>' . $row['name'] . '</td>';
+        echo '<td>' . $row['continent'] . '</td>';
+        echo '<td>' . $row['independence_year'] . '</td>';
+        echo '<td>' . $row['head_of_state'] . '</td>';
+        echo '</tr>';
+    }
+
+    echo '</tbody>';
+    echo '</table>';
 } catch (PDOException $e) {
     // Handle database connection errors
     echo 'Connection failed: ' . $e->getMessage();
